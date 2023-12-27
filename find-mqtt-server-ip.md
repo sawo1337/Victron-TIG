@@ -4,6 +4,11 @@ You need the below python script which you can run online here - https://www.onl
 
 With the output from that script, you can find which server your portal id connects to.
 
+Then replace ["ssl://mqtt000.victronenergy.com:8883"] in telegraf.config with the value returned by the script. For example, if you get 125, then your url needs to be ["ssl://mqtt125.victronenergy.com:8883"]
+
+
+Script code in case the URL above doesn't work:
+
 vrm_portal_id = 'PORTAL_ID_HERE'
 
 def _get_vrm_broker_url():
@@ -15,5 +20,3 @@ def _get_vrm_broker_url():
     
     
 _get_vrm_broker_url()
-
-Then replace ["ssl://mqtt000.victronenergy.com:8883"] in telegraf.config with the value returned by the script. For example, if you get 125, then your url needs to be ["ssl://mqtt125.victronenergy.com:8883"]
