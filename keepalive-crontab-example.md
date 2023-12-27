@@ -8,4 +8,6 @@
 
 #without that keepalive message, you would only get messages in the first message
 
+#warning! If you are using Windows, you need to install Mosquitto for Windows and then set up a scheduled task to execute the same command as below every 55 seconds (make sure to copy only from mosquitto_pub onwards since the part before that is crontab-specific).
+
 `* * * * * sleep 55;  mosquitto_pub -h mqtt000.victronenergy.com -p 8883 --cafile /etc/ssl/certs/venus-ca.crt -i zzr -u victron-portal-email@user.name -P 'victron-portal-password' -t 'R/<your-portal-id>/keepalive' -m ''`
